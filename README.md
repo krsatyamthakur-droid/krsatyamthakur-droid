@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=20,11,6&height=200&section=header&text=Hello%20World,%20I'm%20Satyam!&fontSize=50&fontAlignY=35&fontColor=ffffff" />
 </div>
-//
+
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=5373E5&center=true&vCenter=true&width=700&lines=Full+Stack+Developer;Java+%26+Go+Engineer;UI%2FUX+Designer;Open+Source+Contributor;DSA+%26+Problem+Solver" alt="Typing SVG" />
 </div>
