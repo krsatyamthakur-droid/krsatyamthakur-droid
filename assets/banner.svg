@@ -1,114 +1,197 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" width="1600" height="800" role="img" aria-label="Developer workstation illustration">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 800" width="1600" height="800" role="img" aria-label="Animated developer workstation illustration">
+<title>Satyam Kumar - developer workstation</title>
 <style>
-  .bg   { fill:#141B2D; }
   .b    { fill:#1B2440; stroke:#F4C542; stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
+  .b2   { fill:#222C4E; stroke:#F4C542; stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
   .s    { fill:#0E1424; stroke:#F4C542; stroke-width:3.5; stroke-linejoin:round; }
-  .w    { fill:none;    stroke:#F4C542; stroke-width:4; stroke-linecap:round; stroke-linejoin:round; }
-  .thin { fill:none;    stroke:#F4C542; stroke-width:3; stroke-linecap:round; }
+  .w    { fill:none;    stroke:#F4C542; stroke-width:4;   stroke-linecap:round; stroke-linejoin:round; }
+  .thin { fill:none;    stroke:#F4C542; stroke-width:3;   stroke-linecap:round; }
+  .hair { fill:none;    stroke:#F4C542; stroke-width:2;   stroke-linecap:round; opacity:.65; }
   .d    { fill:#F4C542; }
+  .dim  { fill:#F4C542; opacity:.45; }
   .red  { fill:#E5484D; }
   .teal { fill:#35C4B5; }
   .wht  { fill:#F2F5FF; }
-  .txt  { fill:#F4C542; font-family:'Fira Code','SF Mono',monospace; font-weight:700; }
-  .blink { animation:bl 2.4s ease-in-out infinite; }
-  .blink2{ animation:bl 2.4s ease-in-out infinite; animation-delay:.8s; }
-  .blink3{ animation:bl 2.4s ease-in-out infinite; animation-delay:1.6s; }
-  @keyframes bl { 0%,100%{opacity:1} 50%{opacity:.25} }
-  .spin { transform-origin:center; animation:sp 6s linear infinite; }
+  .txt  { fill:#F4C542; font-family:'Fira Code','SF Mono',Menlo,monospace; font-weight:700; }
+
+  /* ---- data flowing through the cables ---- */
+  .flow { fill:none; stroke:#35C4B5; stroke-width:4; stroke-linecap:round;
+          stroke-dasharray:16 190; animation:flow 3.2s linear infinite; }
+  @keyframes flow { to { stroke-dashoffset:-412; } }
+  .f1{animation-delay:0s}.f2{animation-delay:.4s}.f3{animation-delay:.8s}.f4{animation-delay:1.2s}
+  .f5{animation-delay:1.6s}.f6{animation-delay:2s}.f7{animation-delay:2.4s}.f8{animation-delay:2.8s}
+
+  /* ---- blinking status LEDs ---- */
+  .bl  { animation:bl 2.2s ease-in-out infinite }
+  .bl2 { animation:bl 2.2s ease-in-out infinite; animation-delay:.55s }
+  .bl3 { animation:bl 2.2s ease-in-out infinite; animation-delay:1.1s }
+  .bl4 { animation:bl 2.2s ease-in-out infinite; animation-delay:1.65s }
+  @keyframes bl { 0%,100%{opacity:1} 50%{opacity:.18} }
+
+  /* ---- spinning parts ---- */
+  .spin  { transform-box:fill-box; transform-origin:center; animation:sp 3.6s linear infinite }
+  .spinS { transform-box:fill-box; transform-origin:center; animation:sp 9s linear infinite }
   @keyframes sp { to { transform:rotate(360deg) } }
+
+  /* ---- code typing + cursor ---- */
+  .type { transform-box:fill-box; transform-origin:left center; animation:ty 4.4s steps(14) infinite }
+  @keyframes ty { 0%{transform:scaleX(.04)} 70%,100%{transform:scaleX(1)} }
+  .cur  { animation:cur 1s steps(1) infinite }
+  @keyframes cur { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+
+  /* ---- equaliser bars ---- */
+  .eq { transform-box:fill-box; transform-origin:bottom; animation:eq 1.1s ease-in-out infinite alternate }
+  @keyframes eq { from{transform:scaleY(.28)} to{transform:scaleY(1)} }
+  .e1{animation-delay:0s}.e2{animation-delay:.15s}.e3{animation-delay:.3s}.e4{animation-delay:.45s}.e5{animation-delay:.6s}
+
+  /* ---- steam ---- */
+  .stm { animation:stm 3s ease-in-out infinite; opacity:0 }
+  @keyframes stm { 0%{opacity:0;transform:translateY(6px)} 35%{opacity:.75} 100%{opacity:0;transform:translateY(-22px)} }
+  .s2{animation-delay:1s}.s3{animation-delay:2s}
+
+  /* ---- lens breathing ---- */
+  .lens { transform-box:fill-box; transform-origin:center; animation:ln 4s ease-in-out infinite }
+  @keyframes ln { 0%,100%{transform:scale(1)} 50%{transform:scale(.82)} }
 </style>
 
-<rect class="bg" x="0" y="0" width="1600" height="800"/>
+<defs>
+  <radialGradient id="glow" cx="50%" cy="46%" r="62%">
+    <stop offset="0%"  stop-color="#1D2742"/>
+    <stop offset="100%" stop-color="#121829"/>
+  </radialGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#F4C542" stroke-width="1" opacity=".05"/>
+  </pattern>
+  <!-- cable geometry, drawn once and re-used for the flowing pulse -->
+  <path id="wA" d="M250 250 C 330 250, 320 175, 400 175"/>
+  <path id="wB" d="M470 300 C 540 300, 560 400, 620 420"/>
+  <path id="wC" d="M600 240 C 600 300, 620 330, 660 360"/>
+  <path id="wD" d="M660 180 C 700 180, 690 250, 700 260"/>
+  <path id="wE" d="M930 205 C 1000 205, 1000 150, 1060 150 L 1180 150 C 1240 150, 1240 200, 1240 285"/>
+  <path id="wF" d="M1140 290 C 1200 290, 1230 250, 1290 250"/>
+  <path id="wG" d="M1330 330 C 1380 330, 1380 250, 1440 250"/>
+  <path id="wH" d="M1000 470 C 1080 470, 1090 490, 1160 490"/>
+  <path id="wI" d="M200 485 L 250 485"/>
+  <path id="wJ" d="M380 485 C 480 485, 520 470, 620 470"/>
+  <path id="wK" d="M620 540 C 560 540, 560 600, 500 600"/>
+  <path id="wL" d="M1000 545 C 1060 545, 1080 620, 1140 620"/>
+  <path id="wM" d="M1440 540 C 1440 600, 1420 620, 1420 640"/>
+  <path id="wN" d="M1060 745 C 1120 745, 1150 720, 1180 720"/>
+  <path id="wO" d="M1280 490 L 1320 490"/>
+</defs>
 
-<!-- ============ WIRES (drawn under devices) ============ -->
-<path class="w" d="M250 250 C 330 250, 320 175, 400 175"/>
-<path class="w" d="M470 300 C 540 300, 560 400, 620 420"/>
-<path class="w" d="M600 240 C 600 300, 620 330, 660 360"/>
-<path class="w" d="M660 180 C 700 180, 690 250, 700 260"/>
-<path class="w" d="M930 205 C 1000 205, 1000 150, 1060 150 L 1180 150 C 1240 150, 1240 200, 1240 285"/>
-<path class="w" d="M1140 290 C 1200 290, 1230 250, 1290 250"/>
-<path class="w" d="M1330 330 C 1380 330, 1380 250, 1440 250"/>
-<path class="w" d="M1000 470 C 1080 470, 1090 490, 1160 490"/>
-<path class="w" d="M1280 490 L 1320 490"/>
-<path class="w" d="M200 485 L 250 485"/>
-<path class="w" d="M380 485 C 480 485, 520 470, 620 470"/>
-<path class="w" d="M620 540 C 560 540, 560 600, 500 600"/>
-<path class="w" d="M1000 545 C 1060 545, 1080 620, 1140 620"/>
-<path class="w" d="M1440 540 C 1440 600, 1420 620, 1420 640"/>
-<path class="w" d="M1060 745 C 1120 745, 1150 720, 1180 720"/>
+<rect x="0" y="0" width="1600" height="800" fill="url(#glow)"/>
+<rect x="0" y="0" width="1600" height="800" fill="url(#grid)"/>
 
-<!-- ============ TOP ROW ============ -->
+<!-- ================= CABLES ================= -->
+<g>
+  <use xlink:href="#wA" class="w"/><use xlink:href="#wB" class="w"/><use xlink:href="#wC" class="w"/>
+  <use xlink:href="#wD" class="w"/><use xlink:href="#wE" class="w"/><use xlink:href="#wF" class="w"/>
+  <use xlink:href="#wG" class="w"/><use xlink:href="#wH" class="w"/><use xlink:href="#wI" class="w"/>
+  <use xlink:href="#wJ" class="w"/><use xlink:href="#wK" class="w"/><use xlink:href="#wL" class="w"/>
+  <use xlink:href="#wM" class="w"/><use xlink:href="#wN" class="w"/><use xlink:href="#wO" class="w"/>
+</g>
+<g>
+  <use xlink:href="#wA" class="flow f1"/><use xlink:href="#wB" class="flow f3"/>
+  <use xlink:href="#wE" class="flow f2"/><use xlink:href="#wH" class="flow f4"/>
+  <use xlink:href="#wJ" class="flow f5"/><use xlink:href="#wK" class="flow f6"/>
+  <use xlink:href="#wL" class="flow f7"/><use xlink:href="#wN" class="flow f8"/>
+  <use xlink:href="#wG" class="flow f3"/><use xlink:href="#wM" class="flow f1"/>
+</g>
+
+<!-- ================= TOP ROW ================= -->
 <!-- left speaker -->
 <rect class="b" x="70" y="140" width="180" height="240" rx="12"/>
-<circle class="s" cx="160" cy="205" r="30"/><circle class="d" cx="160" cy="205" r="12"/>
-<circle class="s" cx="160" cy="308" r="50"/><circle class="d" cx="160" cy="308" r="20"/>
-<circle class="d blink" cx="228" cy="360" r="5"/>
+<circle class="dim" cx="84" cy="154" r="3.5"/><circle class="dim" cx="236" cy="154" r="3.5"/>
+<circle class="dim" cx="84" cy="366" r="3.5"/><circle class="dim" cx="236" cy="366" r="3.5"/>
+<circle class="s" cx="160" cy="205" r="30"/><circle class="hair" cx="160" cy="205" r="21"/><circle class="d" cx="160" cy="205" r="12"/>
+<circle class="s" cx="160" cy="308" r="50"/><circle class="hair" cx="160" cy="308" r="38"/><circle class="hair" cx="160" cy="308" r="29"/><circle class="d" cx="160" cy="308" r="20"/>
+<circle class="d bl" cx="228" cy="360" r="5"/>
+<path class="hair" d="M96 360h40"/>
 
 <!-- tower / handheld -->
 <rect class="b" x="400" y="175" width="140" height="240" rx="14"/>
 <rect class="s" x="418" y="195" width="104" height="90" rx="6"/>
+<g class="d"><rect class="eq e1" x="432" y="238" width="8" height="32" rx="3"/><rect class="eq e2" x="446" y="238" width="8" height="32" rx="3"/>
+<rect class="eq e3" x="460" y="238" width="8" height="32" rx="3"/><rect class="eq e4" x="474" y="238" width="8" height="32" rx="3"/>
+<rect class="eq e5" x="488" y="238" width="8" height="32" rx="3"/><rect class="eq e2" x="502" y="238" width="8" height="32" rx="3"/></g>
 <rect class="s" x="418" y="300" width="104" height="98" rx="6"/>
-<path class="thin" d="M432 325h76M432 345h60M432 365h70"/>
+<path class="thin" d="M432 325h76M432 345h60M432 365h70M432 383h44"/>
 <rect class="d" x="452" y="404" width="36" height="6" rx="3"/>
+<circle class="dim" cx="412" cy="187" r="3"/>
 
 <!-- music box -->
 <rect class="b" x="540" y="120" width="120" height="120" rx="14"/>
 <rect class="s" x="558" y="138" width="84" height="84" rx="6"/>
 <path class="w" d="M592 200v-42l26-8v42"/>
 <circle class="d" cx="586" cy="200" r="9"/><circle class="d" cx="612" cy="192" r="9"/>
+<path class="hair" d="M566 214h68"/>
 
-<!-- camera head -->
+<!-- camera head on a coil -->
 <rect class="b" x="700" y="130" width="230" height="150" rx="16"/>
-<rect class="b" x="676" y="178" width="28" height="54" rx="8"/>
-<rect class="b" x="926" y="178" width="28" height="54" rx="8"/>
+<rect class="b2" x="676" y="178" width="28" height="54" rx="8"/>
+<rect class="b2" x="926" y="178" width="28" height="54" rx="8"/>
 <circle class="s" cx="815" cy="205" r="58"/>
-<circle class="d" cx="815" cy="205" r="26"/>
-<circle class="bg" cx="806" cy="196" r="9"/>
+<circle class="hair" cx="815" cy="205" r="48"/>
+<g class="lens"><circle class="d" cx="815" cy="205" r="26"/><circle cx="806" cy="196" r="9" fill="#1B2440"/></g>
+<g class="spinS"><path class="hair" d="M815 147v16M873 205h-16M815 263v-16M757 205h16M856 164l-11 11M856 246l-11-11M774 246l11-11M774 164l11 11"/></g>
 <rect class="s" x="722" y="150" width="46" height="18" rx="9"/>
+<circle class="red bl2" cx="900" cy="158" r="6"/>
 <path class="w" d="M815 280c-40 8-40 22 0 30s40 22 0 30 -40 22 0 30"/>
 
 <!-- right phone -->
 <rect class="b" x="1050" y="200" width="90" height="180" rx="14"/>
 <rect class="s" x="1064" y="216" width="62" height="128" rx="5"/>
-<path class="thin" d="M1076 240h38M1076 258h28M1076 276h34"/>
+<rect class="d" x="1082" y="209" width="26" height="4" rx="2"/>
+<path class="thin" d="M1076 240h38M1076 258h28M1076 276h34M1076 294h22"/>
+<rect class="d bl3" x="1076" y="312" width="30" height="8" rx="4"/>
 <rect class="d" x="1080" y="356" width="30" height="6" rx="3"/>
+<path class="hair" d="M1144 240v26M1144 276v18"/>
 
-<!-- cassette -->
+<!-- cassette with turning reels -->
 <rect class="b" x="1180" y="285" width="150" height="90" rx="10"/>
 <rect class="s" x="1198" y="303" width="114" height="54" rx="5"/>
-<circle class="d" cx="1226" cy="330" r="9"/><circle class="d" cx="1284" cy="330" r="9"/>
+<g class="spin"><circle class="d" cx="1226" cy="330" r="9"/><path class="hair" d="M1226 321v18M1217 330h18"/></g>
+<g class="spin"><circle class="d" cx="1284" cy="330" r="9"/><path class="hair" d="M1284 321v18M1275 330h18"/></g>
 <path class="thin" d="M1226 330h58"/>
+<circle class="dim" cx="1190" cy="367" r="3"/><circle class="dim" cx="1320" cy="367" r="3"/>
 
 <!-- right speaker -->
 <rect class="b" x="1400" y="140" width="160" height="240" rx="12"/>
-<circle class="s" cx="1480" cy="205" r="30"/><circle class="d" cx="1480" cy="205" r="12"/>
-<circle class="s" cx="1480" cy="308" r="50"/><circle class="d" cx="1480" cy="308" r="20"/>
-<rect class="d blink2" x="1534" y="352" width="10" height="10" rx="2"/>
+<circle class="dim" cx="1414" cy="154" r="3.5"/><circle class="dim" cx="1546" cy="154" r="3.5"/>
+<circle class="dim" cx="1414" cy="366" r="3.5"/>
+<circle class="s" cx="1480" cy="205" r="30"/><circle class="hair" cx="1480" cy="205" r="21"/><circle class="d" cx="1480" cy="205" r="12"/>
+<circle class="s" cx="1480" cy="308" r="50"/><circle class="hair" cx="1480" cy="308" r="38"/><circle class="hair" cx="1480" cy="308" r="29"/><circle class="d" cx="1480" cy="308" r="20"/>
+<rect class="d bl2" x="1534" y="352" width="10" height="10" rx="2"/>
 
-<!-- ============ MIDDLE ROW ============ -->
-<!-- camera -->
+<!-- ================= MIDDLE ROW ================= -->
+<!-- photo camera -->
 <rect class="b" x="70" y="440" width="130" height="90" rx="10"/>
-<rect class="b" x="92" y="424" width="44" height="20" rx="6"/>
-<circle class="s" cx="135" cy="486" r="30"/><circle class="d" cx="135" cy="486" r="13"/>
-<circle class="red blink3" cx="180" cy="456" r="6"/>
+<rect class="b2" x="92" y="424" width="44" height="20" rx="6"/>
+<circle class="s" cx="135" cy="486" r="30"/><circle class="hair" cx="135" cy="486" r="22"/>
+<g class="lens"><circle class="d" cx="135" cy="486" r="13"/></g>
+<circle class="red bl3" cx="180" cy="456" r="6"/>
+<rect class="dim" x="80" y="452" width="14" height="8" rx="3"/>
+<path class="hair" d="M164 500h22M164 512h22"/>
 
-<!-- image frame -->
+<!-- picture frame -->
 <rect class="b" x="250" y="430" width="130" height="110" rx="10"/>
 <rect class="s" x="266" y="446" width="98" height="78" rx="5"/>
 <path class="w" d="M272 516l26-30 20 22 18-20 26 28z"/>
 <circle class="d" cx="290" cy="466" r="8"/>
+<path class="hair" d="M330 462c4-4 8-4 12 0M344 456c4-4 8-4 12 0"/>
 
-<!-- ===== CENTER MONITOR ===== -->
-<rect class="b" x="605" y="398" width="24" height="26" rx="5"/>
-<rect class="b" x="605" y="458" width="24" height="26" rx="5"/>
-<rect class="b" x="605" y="518" width="24" height="26" rx="5"/>
-<rect class="b" x="991" y="398" width="24" height="26" rx="5"/>
-<rect class="b" x="991" y="458" width="24" height="26" rx="5"/>
-<rect class="b" x="991" y="518" width="24" height="26" rx="5"/>
+<!-- ============ CENTRE MONITOR ============ -->
+<rect class="b2" x="605" y="398" width="24" height="26" rx="5"/>
+<rect class="b2" x="605" y="458" width="24" height="26" rx="5"/>
+<rect class="b2" x="605" y="518" width="24" height="26" rx="5"/>
+<rect class="b2" x="991" y="398" width="24" height="26" rx="5"/>
+<rect class="b2" x="991" y="458" width="24" height="26" rx="5"/>
+<rect class="b2" x="991" y="518" width="24" height="26" rx="5"/>
 <rect class="b" x="620" y="360" width="380" height="248" rx="16"/>
 <rect class="s" x="640" y="380" width="340" height="192" rx="8"/>
-<circle class="d" cx="654" cy="371" r="4"/><circle class="d" cx="668" cy="371" r="4"/><circle class="d" cx="682" cy="371" r="4"/>
-<!-- code lines -->
+<circle class="red" cx="654" cy="371" r="4"/><circle class="d" cx="668" cy="371" r="4"/><circle class="teal" cx="682" cy="371" r="4"/>
+<path class="hair" d="M700 371h60"/>
 <g>
   <rect class="teal" x="656" y="398" width="60" height="9" rx="4"/>
   <rect class="wht"  x="722" y="398" width="86" height="9" rx="4"/>
@@ -124,56 +207,67 @@
   <rect class="d"    x="668" y="498" width="112" height="9" rx="4"/>
   <rect class="teal" x="656" y="518" width="44" height="9" rx="4"/>
   <rect class="wht"  x="706" y="518" width="90" height="9" rx="4"/>
-  <rect class="red"  x="668" y="538" width="66" height="9" rx="4"/>
-  <rect class="d blink" x="740" y="538" width="14" height="9" rx="4"/>
+  <rect class="type red" x="668" y="538" width="80" height="9" rx="4"/>
+  <rect class="cur d" x="754" y="536" width="10" height="13" rx="2"/>
 </g>
-<!-- floating code window -->
+<rect class="dim" x="964" y="392" width="6" height="60" rx="3"/>
 <rect class="b" x="856" y="440" width="130" height="128" rx="10"/>
-<circle class="d" cx="870" cy="452" r="3.5"/><circle class="d" cx="881" cy="452" r="3.5"/><circle class="d" cx="892" cy="452" r="3.5"/>
+<circle class="red" cx="870" cy="452" r="3.5"/><circle class="d" cx="881" cy="452" r="3.5"/><circle class="teal" cx="892" cy="452" r="3.5"/>
 <rect class="s" x="866" y="462" width="110" height="96" rx="6"/>
 <text class="txt" x="921" y="512" font-size="40" text-anchor="middle">JS</text>
 <text class="txt" x="921" y="540" font-size="16" text-anchor="middle" letter-spacing="3">TIPS</text>
-<!-- stand -->
 <path class="b" d="M792 608h56v34h-56z"/>
+<path class="hair" d="M800 616h40M800 626h40"/>
 <rect class="b" x="740" y="642" width="160" height="18" rx="9"/>
-<circle class="d" cx="820" cy="590" r="7"/>
+<circle class="d bl" cx="820" cy="590" r="7"/>
 
-<!-- Aa box -->
+<!-- Aa tile -->
 <rect class="b" x="1160" y="430" width="120" height="120" rx="14"/>
 <rect class="s" x="1178" y="448" width="84" height="84" rx="6"/>
+<path class="hair" d="M1178 468h84M1178 512h84"/>
 <text class="txt" x="1220" y="503" font-size="44" text-anchor="middle">Aa</text>
 
-<!-- laptop -->
+<!-- open laptop / book -->
 <rect class="b" x="1320" y="400" width="240" height="140" rx="10"/>
 <rect class="s" x="1336" y="416" width="100" height="108" rx="5"/>
 <rect class="s" x="1444" y="416" width="100" height="108" rx="5"/>
 <path class="thin" d="M1348 436h76M1348 452h60M1348 468h72M1348 484h52M1348 500h68"/>
 <path class="thin" d="M1456 436h76M1456 452h60M1456 468h72M1456 484h52M1456 500h68"/>
+<path class="hair" d="M1440 416v108"/>
 <path class="b" d="M1300 540h280l-22 30h-236z"/>
 <rect class="d" x="1400" y="551" width="80" height="7" rx="3.5"/>
 
-<!-- ============ BOTTOM ROW ============ -->
+<!-- ================= BOTTOM ROW ================= -->
 <!-- notebook + pen -->
 <rect class="b" x="90" y="580" width="140" height="180" rx="10"/>
 <rect class="s" x="108" y="598" width="104" height="144" rx="6"/>
 <text class="txt" x="160" y="686" font-size="44" text-anchor="middle">JS</text>
 <path class="w" d="M124 580v40l14-12 14 12v-40"/>
+<path class="hair" d="M96 600v140"/>
 <rect class="b" x="250" y="600" width="26" height="160" rx="12"/>
 <path class="w" d="M250 630h26"/>
+<path class="hair" d="M263 640v90"/>
 
 <!-- machine -->
 <rect class="b" x="320" y="570" width="280" height="220" rx="12"/>
 <rect class="s" x="336" y="588" width="80" height="70" rx="6"/>
+<g class="d"><rect class="eq e3" x="348" y="614" width="8" height="30" rx="3"/><rect class="eq e1" x="362" y="614" width="8" height="30" rx="3"/>
+<rect class="eq e4" x="376" y="614" width="8" height="30" rx="3"/><rect class="eq e2" x="390" y="614" width="8" height="30" rx="3"/></g>
 <g class="d">
   <rect x="346" y="676" width="14" height="12" rx="3"/><rect x="366" y="676" width="14" height="12" rx="3"/><rect x="386" y="676" width="14" height="12" rx="3"/>
   <rect x="346" y="696" width="14" height="12" rx="3"/><rect x="366" y="696" width="14" height="12" rx="3"/><rect x="386" y="696" width="14" height="12" rx="3"/>
   <rect x="346" y="716" width="14" height="12" rx="3"/><rect x="366" y="716" width="14" height="12" rx="3"/><rect x="386" y="716" width="14" height="12" rx="3"/>
 </g>
-<circle class="s" cx="366" cy="756" r="16"/><path class="thin" d="M366 746v10h8"/>
-<rect class="b" x="430" y="588" width="90" height="26" rx="8"/>
+<circle class="s" cx="366" cy="756" r="16"/>
+<g class="spinS"><path class="thin" d="M366 746v10h8"/></g>
+<rect class="b2" x="430" y="588" width="90" height="26" rx="8"/>
+<g><path class="hair stm"    d="M462 586c0-10 10-10 10-20s-10-10-10-20"/>
+   <path class="hair stm s2" d="M478 586c0-10 10-10 10-20s-10-10-10-20"/>
+   <path class="hair stm s3" d="M494 586c0-10 10-10 10-20s-10-10-10-20"/></g>
 <path class="b" d="M440 630h70l-10 90h-50z"/>
 <rect class="s" x="452" y="648" width="46" height="30" rx="4"/>
-<rect class="b" x="430" y="734" width="90" height="40" rx="8"/>
+<rect class="d dim" x="452" y="690" width="42" height="22" rx="4"/>
+<rect class="b2" x="430" y="734" width="90" height="40" rx="8"/>
 <rect class="s" x="534" y="600" width="56" height="70" rx="6"/>
 <path class="thin" d="M544 618h36M544 634h36M544 650h36"/>
 <circle class="d" cx="562" cy="700" r="7"/><path class="thin" d="M534 700h56"/>
@@ -186,44 +280,40 @@
 <rect class="s" x="678" y="750" width="90" height="26" rx="4"/>
 <rect class="s" x="778" y="716" width="90" height="26" rx="4"/>
 <rect class="s" x="778" y="750" width="90" height="26" rx="4"/>
-<circle class="d blink" cx="784" cy="729" r="5"/><circle class="d blink3" cx="784" cy="763" r="5"/>
-<circle class="d blink2" cx="684" cy="729" r="5"/><circle class="d" cx="684" cy="763" r="5"/>
-<g class="d">
-  <rect x="886" y="716" width="7" height="26" rx="3"/><rect x="900" y="722" width="7" height="20" rx="3"/>
-  <rect x="914" y="712" width="7" height="30" rx="3"/><rect x="928" y="724" width="7" height="18" rx="3"/>
-</g>
+<path class="hair" d="M700 729h60M700 763h60M800 729h60M800 763h60"/>
+<circle class="teal bl"  cx="688" cy="729" r="5"/><circle class="d bl3" cx="688" cy="763" r="5"/>
+<circle class="d bl2"    cx="788" cy="729" r="5"/><circle class="teal bl4" cx="788" cy="763" r="5"/>
+<g class="d"><rect class="eq e2" x="886" y="712" width="7" height="30" rx="3"/><rect class="eq e4" x="900" y="712" width="7" height="30" rx="3"/>
+<rect class="eq e1" x="914" y="712" width="7" height="30" rx="3"/><rect class="eq e5" x="928" y="712" width="7" height="30" rx="3"/></g>
 <rect class="s" x="886" y="750" width="60" height="26" rx="4"/>
-<g class="d">
-  <circle cx="966" cy="722" r="3"/><circle cx="980" cy="722" r="3"/><circle cx="994" cy="722" r="3"/><circle cx="1008" cy="722" r="3"/>
-  <circle cx="966" cy="736" r="3"/><circle cx="980" cy="736" r="3"/><circle cx="994" cy="736" r="3"/><circle cx="1008" cy="736" r="3"/>
-  <circle cx="966" cy="750" r="3"/><circle cx="980" cy="750" r="3"/><circle cx="994" cy="750" r="3"/><circle cx="1008" cy="750" r="3"/>
-  <circle cx="966" cy="764" r="3"/><circle cx="980" cy="764" r="3"/><circle cx="994" cy="764" r="3"/><circle cx="1008" cy="764" r="3"/>
+<path class="hair" d="M896 763h40"/>
+<g class="dim">
+  <circle cx="966" cy="722" r="3"/><circle cx="980" cy="722" r="3"/><circle cx="994" cy="722" r="3"/><circle cx="1008" cy="722" r="3"/><circle cx="1022" cy="722" r="3"/>
+  <circle cx="966" cy="736" r="3"/><circle cx="980" cy="736" r="3"/><circle cx="994" cy="736" r="3"/><circle cx="1008" cy="736" r="3"/><circle cx="1022" cy="736" r="3"/>
+  <circle cx="966" cy="750" r="3"/><circle cx="980" cy="750" r="3"/><circle cx="994" cy="750" r="3"/><circle cx="1008" cy="750" r="3"/><circle cx="1022" cy="750" r="3"/>
+  <circle cx="966" cy="764" r="3"/><circle cx="980" cy="764" r="3"/><circle cx="994" cy="764" r="3"/><circle cx="1008" cy="764" r="3"/><circle cx="1022" cy="764" r="3"/>
 </g>
 
-<!-- fans -->
+<!-- cooling fans -->
 <rect class="b" x="1100" y="600" width="200" height="120" rx="12"/>
-<circle class="s" cx="1150" cy="660" r="42"/>
-<g class="spin" style="transform-box:fill-box">
-  <path class="w" d="M1150 660l0-34M1150 660l30 16M1150 660l-30 16M1150 660l30-16M1150 660l-30-16M1150 660l0 34"/>
-</g>
+<circle class="dim" cx="1112" cy="612" r="3.5"/><circle class="dim" cx="1288" cy="612" r="3.5"/>
+<circle class="dim" cx="1112" cy="708" r="3.5"/><circle class="dim" cx="1288" cy="708" r="3.5"/>
+<circle class="s" cx="1150" cy="660" r="42"/><circle class="hair" cx="1150" cy="660" r="34"/>
+<g class="spin"><path class="w" d="M1150 660l0-32M1150 660l28 16M1150 660l-28 16M1150 660l28-16M1150 660l-28-16M1150 660l0 32"/></g>
 <circle class="d" cx="1150" cy="660" r="8"/>
-<circle class="s" cx="1250" cy="660" r="42"/>
-<g class="spin" style="transform-box:fill-box">
-  <path class="w" d="M1250 660l0-34M1250 660l30 16M1250 660l-30 16M1250 660l30-16M1250 660l-30-16M1250 660l0 34"/>
-</g>
+<circle class="s" cx="1250" cy="660" r="42"/><circle class="hair" cx="1250" cy="660" r="34"/>
+<g class="spin"><path class="w" d="M1250 660l0-32M1250 660l28 16M1250 660l-28 16M1250 660l28-16M1250 660l-28-16M1250 660l0 32"/></g>
 <circle class="d" cx="1250" cy="660" r="8"/>
 
 <!-- tablet -->
 <rect class="b" x="1360" y="640" width="140" height="150" rx="12"/>
 <rect class="s" x="1376" y="656" width="108" height="106" rx="6"/>
+<circle class="dim" cx="1430" cy="648" r="3"/>
 <path class="thin" d="M1390 678h80M1390 696h60M1390 714h72M1390 732h50"/>
 <rect class="d" x="1408" y="772" width="44" height="6" rx="3"/>
 
-<!-- junction dots -->
-<circle class="d" cx="620" cy="420" r="7"/>
-<circle class="d" cx="620" cy="470" r="7"/>
-<circle class="d" cx="1000" cy="470" r="7"/>
-<circle class="d" cx="1180" cy="150" r="7"/>
-<circle class="d" cx="1140" cy="290" r="7"/>
-<circle class="d" cx="1140" cy="620" r="7"/>
+<!-- cable junctions -->
+<circle class="d" cx="620" cy="420" r="7"/><circle class="d" cx="620" cy="470" r="7"/>
+<circle class="d" cx="1000" cy="470" r="7"/><circle class="d" cx="1180" cy="150" r="7"/>
+<circle class="d" cx="1140" cy="290" r="7"/><circle class="d" cx="1140" cy="620" r="7"/>
 </svg>
