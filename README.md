@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:8B0000,50:D32F2F,100:FFA000&height=180&section=header&text=Satyam%20Kumar&fontColor=ffffff&fontSize=46&animation=fadeIn&fontAlignY=42&desc=Full%20Stack%20Developer%20%7C%20Backend%20Enthusiast&descAlignY=62&descSize=18" width="100%" alt="header" />
+<img src="assets/banner.svg" width="100%" alt="Satyam Kumar" />
 
 # Hi 👋, I'm Satyam Kumar
 
