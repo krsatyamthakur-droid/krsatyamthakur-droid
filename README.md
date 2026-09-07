@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/banner.jpg" width="420" alt="Satyam Kumar" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A66C2,100:1DA1F2&height=180&section=header&text=Satyam%20Kumar&fontColor=ffffff&fontSize=48&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Backend%20Enthusiast&descAlignY=55&descSize=18" width="100%" alt="header" />
 
 # Hi 👋, I'm Satyam Kumar
 
-### 🦸 Full Stack Developer • Backend Enthusiast • Open Source Contributor
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=1DA1F2&center=true&vCenter=true&width=520&lines=Full+Stack+Developer;Backend+Enthusiast;Java+%26+Go+Engineer;Open+Source+Contributor;Always+learning%2C+always+building" alt="Typing animation" />
 
 <p>
   <a href="https://www.linkedin.com/in/satyamrkr/">
