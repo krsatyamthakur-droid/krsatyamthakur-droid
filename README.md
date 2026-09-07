@@ -64,11 +64,6 @@ I'm always learning, building, and looking for ways to grow as a developer.
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=krsatyamthakur-droid&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=krsatyamthakur-droid&layout=compact&theme=tokyonight&hide_border=true" alt="top languages" />
-
-<br/>
-
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=krsatyamthakur-droid&theme=tokyonight&hide_border=true" alt="streak" />
 
 </div>
