@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A66C2,100:1DA1F2&height=180&section=header&text=Satyam%20Kumar&fontColor=ffffff&fontSize=48&animation=fadeIn&fontAlignY=35&desc=Full%20Stack%20Developer%20%7C%20Backend%20Enthusiast&descAlignY=55&descSize=18" width="100%" alt="header" />
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0:8B0000,50:D32F2F,100:FFA000&height=180&section=header&text=Satyam%20Kumar&fontColor=ffffff&fontSize=46&animation=fadeIn&fontAlignY=42&desc=Full%20Stack%20Developer%20%7C%20Backend%20Enthusiast&descAlignY=62&descSize=18" width="100%" alt="header" />
 
 # Hi 👋, I'm Satyam Kumar
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=1DA1F2&center=true&vCenter=true&width=520&lines=Full+Stack+Developer;Backend+Enthusiast;Java+%26+Go+Engineer;Open+Source+Contributor;Always+learning%2C+always+building" alt="Typing animation" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=900&color=FFA000&center=true&vCenter=true&width=520&lines=Full+Stack+Developer;Backend+Enthusiast;Java+%26+Go+Engineer;Open+Source+Contributor;Always+learning%2C+always+building" alt="Typing animation" />
 
 <p>
   <a href="https://www.linkedin.com/in/satyamrkr/">
     <img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:krsatyamthakur@gmail.com">
-    <img src="https://img.shields.io/badge/EMAIL-1DA1F2?style=for-the-badge&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/EMAIL-D14836?style=for-the-badge&logoColor=white" alt="Email" />
   </a>
 </p>
 
