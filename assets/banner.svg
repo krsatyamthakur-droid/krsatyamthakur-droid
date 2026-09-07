@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 800" width="1600" height="800" role="img" aria-label="Animated developer workstation illustration">
 <title>Satyam Kumar - developer workstation</title>
 <style>
-  .b    { fill:#14224A; stroke:#4D9BFF; stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
-  .b2   { fill:#1B2E5E; stroke:#4D9BFF; stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
-  .s    { fill:#0A1530; stroke:#4D9BFF; stroke-width:3.5; stroke-linejoin:round; }
-  .w    { fill:none;    stroke:#4D9BFF; stroke-width:4;   stroke-linecap:round; stroke-linejoin:round; }
-  .thin { fill:none;    stroke:#4D9BFF; stroke-width:3;   stroke-linecap:round; }
-  .hair { fill:none;    stroke:#4D9BFF; stroke-width:2;   stroke-linecap:round; opacity:.65; }
-  .d    { fill:#FF4756; }
-  .dim  { fill:#FF4756; opacity:.5; }
-  .red  { fill:#FF4756; }
-  .teal { fill:#4D9BFF; }
+  .b    { fill:#1A1030; stroke:#FF3B47; stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
+  .b2   { fill:#241640; stroke:#FF3B47; stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
+  .s    { fill:#100A22; stroke:#FF3B47; stroke-width:3.5; stroke-linejoin:round; }
+  .w    { fill:none;    stroke:#FF3B47; stroke-width:4;   stroke-linecap:round; stroke-linejoin:round; }
+  .thin { fill:none;    stroke:#FF3B47; stroke-width:3;   stroke-linecap:round; }
+  .hair { fill:none;    stroke:#5AA8FF; stroke-width:2;   stroke-linecap:round; opacity:.65; }
+  .d    { fill:#FF3B47; }
+  .dim  { fill:#5AA8FF; opacity:.6; }
+  .red  { fill:#FF3B47; }
+  .teal { fill:#5AA8FF; }
   .wht  { fill:#EAF0FF; }
-  .txt  { fill:#FF4756; font-family:'Fira Code','SF Mono',Menlo,monospace; font-weight:700; }
+  .txt  { fill:#FF3B47; font-family:'Fira Code','SF Mono',Menlo,monospace; font-weight:700; }
 
   /* ---- data flowing through the cables ---- */
-  .flow { fill:none; stroke:#FF4756; stroke-width:4; stroke-linecap:round;
+  .flow { fill:none; stroke:#5AA8FF; stroke-width:4; stroke-linecap:round;
           stroke-dasharray:16 190; animation:flow 3.2s linear infinite; }
   @keyframes flow { to { stroke-dashoffset:-412; } }
   .f1{animation-delay:0s}.f2{animation-delay:.4s}.f3{animation-delay:.8s}.f4{animation-delay:1.2s}
@@ -56,11 +56,11 @@
 
 <defs>
   <radialGradient id="glow" cx="50%" cy="46%" r="62%">
-    <stop offset="0%"  stop-color="#1B3266"/>
-    <stop offset="100%" stop-color="#080F24"/>
+    <stop offset="0%"  stop-color="#3A1230"/>
+    <stop offset="100%" stop-color="#140A1E"/>
   </radialGradient>
   <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M40 0H0V40" fill="none" stroke="#4D9BFF" stroke-width="1" opacity=".05"/>
+    <path d="M40 0H0V40" fill="none" stroke="#FF3B47" stroke-width="1" opacity=".05"/>
   </pattern>
   <!-- cable geometry, drawn once and re-used for the flowing pulse -->
   <path id="wA" d="M250 250 C 330 250, 320 175, 400 175"/>
@@ -133,7 +133,7 @@
 <rect class="b2" x="926" y="178" width="28" height="54" rx="8"/>
 <circle class="s" cx="815" cy="205" r="58"/>
 <circle class="hair" cx="815" cy="205" r="48"/>
-<g class="lens"><circle class="d" cx="815" cy="205" r="26"/><circle cx="806" cy="196" r="9" fill="#14224A"/></g>
+<g class="lens"><circle class="d" cx="815" cy="205" r="26"/><circle cx="806" cy="196" r="9" fill="#1A1030"/></g>
 <g class="spinS"><path class="hair" d="M815 147v16M873 205h-16M815 263v-16M757 205h16M856 164l-11 11M856 246l-11-11M774 246l11-11M774 164l11 11"/></g>
 <rect class="s" x="722" y="150" width="46" height="18" rx="9"/>
 <circle class="red bl2" cx="900" cy="158" r="6"/>
