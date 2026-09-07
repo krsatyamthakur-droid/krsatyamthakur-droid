@@ -1,8 +1,10 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px" height="30px" />
+<img src="https://github.com/krsatyamthakur-droid.png" width="180" alt="Satyam Kumar" />
 
 # Hi 👋, I'm Satyam Kumar
+
+### 🦸 Full Stack Developer • Backend Enthusiast • Open Source Contributor
 
 <p>
   <a href="https://www.linkedin.com/in/satyamrkr/">
