@@ -38,11 +38,25 @@ I'm always learning, building, and looking for ways to grow as a developer.
 
 ## 🛠️ Language and tools
 
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nodejs,express,mongodb,postgres,java,go,python&theme=dark" alt="skills" />
-  <br/>
-  <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,git,github,tailwind,redux,vscode&theme=dark" alt="tools" />
-</p>
+### Languages
+
+| <img src="https://skillicons.dev/icons?i=java&theme=dark" width="52" alt="Java" /><br>Java | <img src="https://skillicons.dev/icons?i=go&theme=dark" width="52" alt="Go" /><br>Go | <img src="https://skillicons.dev/icons?i=js&theme=dark" width="52" alt="JavaScript" /><br>JavaScript | <img src="https://skillicons.dev/icons?i=ts&theme=dark" width="52" alt="TypeScript" /><br>TypeScript | <img src="https://skillicons.dev/icons?i=python&theme=dark" width="52" alt="Python" /><br>Python | <img src="https://skillicons.dev/icons?i=cpp&theme=dark" width="52" alt="C++" /><br>C++ | <img src="https://skillicons.dev/icons?i=bash&theme=dark" width="52" alt="Bash" /><br>Bash |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+
+### Frontend
+
+| <img src="https://skillicons.dev/icons?i=react&theme=dark" width="52" alt="React" /><br>React | <img src="https://skillicons.dev/icons?i=html&theme=dark" width="52" alt="HTML5" /><br>HTML5 | <img src="https://skillicons.dev/icons?i=css&theme=dark" width="52" alt="CSS3" /><br>CSS3 | <img src="https://skillicons.dev/icons?i=tailwind&theme=dark" width="52" alt="Tailwind" /><br>Tailwind | <img src="https://skillicons.dev/icons?i=redux&theme=dark" width="52" alt="Redux" /><br>Redux |
+|:---:|:---:|:---:|:---:|:---:|
+
+### Backend & Data
+
+| <img src="https://skillicons.dev/icons?i=nodejs&theme=dark" width="52" alt="Node.js" /><br>Node.js | <img src="https://skillicons.dev/icons?i=express&theme=dark" width="52" alt="Express" /><br>Express | <img src="https://skillicons.dev/icons?i=mongodb&theme=dark" width="52" alt="MongoDB" /><br>MongoDB | <img src="https://skillicons.dev/icons?i=postgres&theme=dark" width="52" alt="PostgreSQL" /><br>PostgreSQL | <img src="https://skillicons.dev/icons?i=redis&theme=dark" width="52" alt="Redis" /><br>Redis |
+|:---:|:---:|:---:|:---:|:---:|
+
+### DevOps & Tools
+
+| <img src="https://skillicons.dev/icons?i=docker&theme=dark" width="52" alt="Docker" /><br>Docker | <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" width="52" alt="Kubernetes" /><br>Kubernetes | <img src="https://skillicons.dev/icons?i=git&theme=dark" width="52" alt="Git" /><br>Git | <img src="https://skillicons.dev/icons?i=githubactions&theme=dark" width="52" alt="GitHub Actions" /><br>GitHub Actions | <img src="https://skillicons.dev/icons?i=linux&theme=dark" width="52" alt="Linux" /><br>Linux | <img src="https://skillicons.dev/icons?i=vscode&theme=dark" width="52" alt="VS Code" /><br>VS Code |
+|:---:|:---:|:---:|:---:|:---:|:---:|
 
 ---
 
