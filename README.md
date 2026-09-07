@@ -60,16 +60,6 @@ I'm always learning, building, and looking for ways to grow as a developer.
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=krsatyamthakur-droid&theme=tokyonight&hide_border=true" alt="streak" />
-
-</div>
-
----
-
 <div align="center">
 
 ⭐️ From [krsatyamthakur-droid](https://github.com/krsatyamthakur-droid)
