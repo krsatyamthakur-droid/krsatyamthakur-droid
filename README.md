@@ -57,11 +57,3 @@ I'm always learning, building, and looking for ways to grow as a developer.
 
 | <img src="https://skillicons.dev/icons?i=docker&theme=dark" width="52" alt="Docker" /><br>Docker | <img src="https://skillicons.dev/icons?i=kubernetes&theme=dark" width="52" alt="Kubernetes" /><br>Kubernetes | <img src="https://skillicons.dev/icons?i=git&theme=dark" width="52" alt="Git" /><br>Git | <img src="https://skillicons.dev/icons?i=githubactions&theme=dark" width="52" alt="GitHub Actions" /><br>GitHub Actions | <img src="https://skillicons.dev/icons?i=linux&theme=dark" width="52" alt="Linux" /><br>Linux | <img src="https://skillicons.dev/icons?i=vscode&theme=dark" width="52" alt="VS Code" /><br>VS Code |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-
----
-
-<div align="center">
-
-⭐️ From [krsatyamthakur-droid](https://github.com/krsatyamthakur-droid)
-
-</div>
