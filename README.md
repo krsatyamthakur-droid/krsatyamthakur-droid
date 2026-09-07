@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.jpg" width="260" alt="Satyam Kumar" />
+<img src="assets/banner.jpg" width="420" alt="Satyam Kumar" />
 
 # Hi 👋, I'm Satyam Kumar
 
